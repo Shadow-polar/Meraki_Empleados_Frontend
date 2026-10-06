@@ -1,0 +1,654 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+  background: #FFFFFF;
+  color: #511950;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ==============================
+   PÁGINA PRINCIPAL
+   ============================== */
+
+.pagina-meraki {
+  min-height: 100vh;
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ==============================
+   ENCABEZADO
+   ============================== */
+
+.encabezado-meraki {
+  min-height: 230px;
+  background: #511950;
+  color: #FFFFFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+
+  padding: 35px 25px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Decoración superior */
+
+.encabezado-meraki::before {
+  content: '';
+  position: absolute;
+
+  width: 280px;
+  height: 150px;
+
+  background: #9F7099;
+
+  border-radius: 0 0 100% 0;
+
+  left: -90px;
+  top: -50px;
+
+  opacity: 0.8;
+}
+
+
+.encabezado-meraki::after {
+  content: '';
+  position: absolute;
+
+  width: 220px;
+  height: 100px;
+
+  border: 2px solid #D6C4D4;
+  border-left: none;
+  border-bottom: none;
+
+  border-radius: 0 100% 0 0;
+
+  right: -40px;
+  bottom: -30px;
+}
+
+
+/* Logo */
+
+.logo-contenedor {
+  position: relative;
+  z-index: 2;
+
+  width: 145px;
+  height: 145px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.logo-meraki {
+  width: 145px;
+  height: 145px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+}
+
+
+/* Texto encabezado */
+
+.encabezado-texto {
+  position: relative;
+  z-index: 2;
+}
+
+
+.encabezado-texto h1 {
+  margin: 0;
+
+  font-size: 42px;
+  font-weight: 400;
+
+  letter-spacing: 1px;
+}
+
+
+.encabezado-texto p {
+  margin: 8px 0 0;
+
+  color: #D6C4D4;
+
+  font-size: 18px;
+  font-weight: 300;
+}
+
+
+/* ==============================
+   CONTENIDO
+   ============================== */
+
+.contenido {
+  width: min(1050px, 92%);
+  margin: 0 auto;
+
+  padding: 45px 0 60px;
+}
+
+
+/* ==============================
+   TARJETAS
+   ============================== */
+
+.tarjeta {
+  background: #FFFFFF;
+
+  border: 1px solid #D6C4D4;
+
+  border-radius: 18px;
+
+  padding: 35px;
+
+  box-shadow: 0 8px 25px rgba(81, 25, 80, 0.08);
+}
+
+
+/* ==============================
+   TÍTULOS
+   ============================== */
+
+.titulo-seccion {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+
+.titulo-seccion h2 {
+  margin: 0;
+
+  color: #511950;
+
+  font-size: 28px;
+  font-weight: 400;
+}
+
+
+.decoracion {
+  width: 8px;
+  height: 35px;
+
+  display: block;
+
+  background: #9F7099;
+
+  border-radius: 20px;
+}
+
+
+/* ==============================
+   FORMULARIO
+   ============================== */
+
+.formulario {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+
+.campo {
+  margin-bottom: 18px;
+}
+
+
+.campo label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #511950;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+.campo input {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 1px solid #D6C4D4;
+
+  border-radius: 9px;
+
+  background: #FFFFFF;
+
+  color: #511950;
+
+  font-family: 'Lato', sans-serif;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+
+.campo input::placeholder {
+  color: #9F7099;
+}
+
+
+.campo input:focus {
+  border-color: #9F7099;
+
+  box-shadow: 0 0 0 3px rgba(159, 112, 153, 0.15);
+}
+
+
+/* ==============================
+   BOTÓN PRINCIPAL
+   ============================== */
+
+.boton-principal {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #511950;
+  color: #FFFFFF;
+
+  font-family: 'Lato', sans-serif;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.boton-principal:hover {
+  background: #9F7099;
+
+  transform: translateY(-1px);
+}
+
+
+/* ==============================
+   MENSAJE
+   ============================== */
+
+.mensaje {
+  margin-top: 20px;
+
+  padding: 13px 16px;
+
+  border-radius: 9px;
+
+  background: #D6C4D4;
+
+  color: #511950;
+
+  text-align: center;
+
+  font-weight: 700;
+}
+
+
+/* ==============================
+   SECCIÓN CLIENTES
+   ============================== */
+
+.clientes-seccion {
+  margin-top: 55px;
+}
+
+
+.clientes {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+
+  gap: 22px;
+}
+
+
+/* ==============================
+   TARJETA CLIENTE
+   ============================== */
+
+.cliente {
+  background: #FFFFFF;
+
+  border: 1px solid #D6C4D4;
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  box-shadow: 0 6px 20px rgba(81, 25, 80, 0.07);
+
+  transition: 0.2s;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+.cliente::before {
+  content: '';
+
+  position: absolute;
+
+  width: 100px;
+  height: 70px;
+
+  background: #D6C4D4;
+
+  border-radius: 0 0 100% 0;
+
+  top: -30px;
+  left: -30px;
+}
+
+
+.cliente:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 28px rgba(81, 25, 80, 0.13);
+}
+
+
+/* ==============================
+   ICONO DEL CLIENTE
+   ============================== */
+
+.cliente-icono {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  border-radius: 50%;
+
+  background: #9F7099;
+
+  color: #FFFFFF;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  position: relative;
+}
+
+
+/* ==============================
+   INFORMACIÓN
+   ============================== */
+
+.cliente-info h3 {
+  margin: 0 0 18px;
+
+  color: #511950;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+.cliente-info p {
+  margin: 9px 0;
+
+  color: #511950;
+
+  font-size: 14px;
+}
+
+
+.cliente-info strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #9F7099;
+
+  font-size: 13px;
+}
+
+
+/* ==============================
+   BOTONES
+   ============================== */
+
+.acciones {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+
+.acciones button {
+  flex: 1;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  font-family: 'Lato', sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.boton-editar {
+  border: 1px solid #9F7099;
+
+  background: #FFFFFF;
+
+  color: #511950;
+}
+
+
+.boton-editar:hover {
+  background: #D6C4D4;
+}
+
+
+.boton-eliminar {
+  border: none;
+
+  background: #511950;
+
+  color: #FFFFFF;
+}
+
+
+.boton-eliminar:hover {
+  background: #9F7099;
+}
+
+
+/* ==============================
+   PIE
+   ============================== */
+
+.pie-meraki {
+  margin-top: 20px;
+
+  padding: 30px;
+
+  background: #511950;
+
+  color: #D6C4D4;
+
+  text-align: center;
+}
+
+
+.pie-meraki p {
+  margin: 0;
+
+  font-size: 14px;
+
+  font-weight: 300;
+}
+
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 650px) {
+
+  .encabezado-meraki {
+    flex-direction: column;
+
+    text-align: center;
+
+    min-height: 300px;
+  }
+
+
+  .encabezado-texto h1 {
+    font-size: 32px;
+  }
+
+
+  .tarjeta {
+    padding: 25px 20px;
+  }
+
+
+  .clientes {
+    grid-template-columns: 1fr;
+  }
+
+  /* ==============================
+   LOGO
+   ============================== */
+
+.logo-meraki {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+
+/* ==============================
+   BUSCADOR
+   ============================== */
+
+.buscador {
+  max-width: 800px;
+  margin: 0 auto 25px;
+}
+
+.buscador label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #511950;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.buscador input {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #D6C4D4;
+
+  border-radius: 10px;
+
+  background: #FFFFFF;
+
+  color: #511950;
+
+  font-family: 'Lato', sans-serif;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.buscador input::placeholder {
+  color: #9F7099;
+}
+
+.buscador input:focus {
+  border-color: #9F7099;
+
+  box-shadow:
+    0 0 0 3px rgba(159, 112, 153, 0.15);
+}
+
+
+/* ==============================
+   SIN RESULTADOS
+   ============================== */
+
+.sin-resultados {
+  margin-top: 20px;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  background: #D6C4D4;
+
+  color: #511950;
+
+  text-align: center;
+
+  font-weight: 700;
+}
+
+}

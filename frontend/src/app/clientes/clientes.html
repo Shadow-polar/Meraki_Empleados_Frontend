@@ -1,0 +1,267 @@
+<div class="pagina-meraki">
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado-meraki">
+
+    <div class="logo-contenedor">
+      <img
+        src="/logo-meraki.png"
+        alt="Logo MERAKI"
+        class="logo-meraki">
+    </div>
+
+    <div class="encabezado-texto">
+      <h1>Clientes MERAKI</h1>
+      <p>Gestión de clientes</p>
+    </div>
+
+  </header>
+
+
+  <!-- CONTENIDO -->
+  <main class="contenido">
+
+
+    <!-- FORMULARIO -->
+    <section class="tarjeta formulario">
+
+      <div class="titulo-seccion">
+
+        <span class="decoracion"></span>
+
+        <h2>
+          {{ clienteEditando
+            ? 'Editar cliente'
+            : 'Registrar cliente' }}
+        </h2>
+
+      </div>
+
+
+      <form (ngSubmit)="registrarCliente()">
+
+        <div class="campo">
+
+          <label>Nombre</label>
+
+          <input
+            type="text"
+            name="nombre"
+            [(ngModel)]="nuevoCliente.nombre"
+            placeholder="Ingresa el nombre"
+            required>
+
+        </div>
+
+
+        <div class="campo">
+
+          <label>Correo</label>
+
+          <input
+            type="email"
+            name="correo"
+            [(ngModel)]="nuevoCliente.correo"
+            placeholder="ejemplo@gmail.com"
+            required>
+
+        </div>
+
+
+        <div class="campo">
+
+          <label>Contraseña</label>
+
+          <input
+            type="password"
+            name="contrasena"
+            [(ngModel)]="nuevoCliente.contrasena"
+            placeholder="Ingresa la contraseña"
+            required>
+
+        </div>
+
+
+        <div class="campo">
+
+          <label>Dirección</label>
+
+          <input
+            type="text"
+            name="direccion"
+            [(ngModel)]="nuevoCliente.direccion"
+            placeholder="Ingresa la dirección"
+            required>
+
+        </div>
+
+
+        <div class="campo">
+
+          <label>Celular</label>
+
+          <input
+            type="text"
+            name="celular"
+            [(ngModel)]="nuevoCliente.celular"
+            placeholder="Ingresa el celular"
+            required>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="boton-principal">
+
+          {{ clienteEditando
+            ? 'Actualizar cliente'
+            : 'Registrar cliente' }}
+
+        </button>
+
+      </form>
+
+
+      <!-- MENSAJE SOLO PARA ACTUALIZACIÓN -->
+      @if (mensaje) {
+
+        <div class="mensaje">
+          {{ mensaje }}
+        </div>
+
+      }
+
+    </section>
+
+
+    <!-- LISTADO -->
+    <section class="clientes-seccion">
+
+      <div class="titulo-seccion">
+
+        <span class="decoracion"></span>
+
+        <h2>Clientes registrados</h2>
+
+      </div>
+
+
+      <!-- BUSCADOR -->
+      <div class="buscador">
+
+        <label for="busqueda">
+          Buscar cliente
+        </label>
+
+        <input
+          id="busqueda"
+          type="text"
+          [(ngModel)]="terminoBusqueda"
+          name="busqueda"
+          placeholder="Buscar por nombre, correo, dirección o celular">
+
+      </div>
+
+
+      <!-- CLIENTES -->
+      <div class="clientes">
+
+        @for (
+          cliente of clientesFiltrados;
+          track cliente._id
+        ) {
+
+          <article class="cliente">
+
+
+            <div class="cliente-icono">
+              {{ cliente.nombre.charAt(0).toUpperCase() }}
+            </div>
+
+
+            <div class="cliente-info">
+
+              <h3>
+                {{ cliente.nombre }}
+              </h3>
+
+
+              <p>
+                <strong>Correo</strong>
+                {{ cliente.correo }}
+              </p>
+
+
+              <p>
+                <strong>Dirección</strong>
+                {{ cliente.direccion }}
+              </p>
+
+
+              <p>
+                <strong>Celular</strong>
+                {{ cliente.celular }}
+              </p>
+
+            </div>
+
+
+            <div class="acciones">
+
+              <button
+                type="button"
+                class="boton-editar"
+                (click)="editarCliente(cliente)">
+
+                Editar
+
+              </button>
+
+
+              <button
+                type="button"
+                class="boton-eliminar"
+                (click)="eliminarCliente(cliente._id)">
+
+                Eliminar
+
+              </button>
+
+            </div>
+
+
+          </article>
+
+        }
+
+      </div>
+
+
+      <!-- CUANDO NO HAY RESULTADOS -->
+      @if (
+        clientesFiltrados.length === 0 &&
+        terminoBusqueda
+      ) {
+
+        <p class="sin-resultados">
+          No se encontró ningún cliente.
+        </p>
+
+      }
+
+    </section>
+
+  </main>
+
+
+  <!-- PIE -->
+  <footer class="pie-meraki">
+
+    <p>
+      MERAKI · Gestión de clientes
+    </p>
+
+  </footer>
+
+</div>
